@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:stripe="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <com.stripe.android.view.CardMultilineWidget
+            android:id="@+id/card_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            stripe:cardTint="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/button_add_card"
+            style="@style/AppTheme.SubmitButton"
+            android:text="@string/add_card_text"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+</layout>

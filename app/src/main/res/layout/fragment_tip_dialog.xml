@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_user"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                tools:src="@drawable/profile_pic_demo" />
+
+            <TextView
+                android:id="@+id/tv_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TipItemStyle"
+                android:layout_marginStart="12dp"
+                android:layout_alignStart="@id/et_custom"
+                android:layout_alignBaseline="@id/text_invoice_detail"
+                android:text="@string/skip" />
+
+            <TextView
+                android:id="@+id/text_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Shubham Mathur"
+                android:fontFamily="@font/gordita_bold"
+                android:textColor="@color/lightBlack"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/tv_skip"
+                android:layout_toEndOf="@id/image_user"/>
+
+            <RatingBar
+                android:id="@+id/rating_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_below="@id/text_user_name"
+                android:layout_alignStart="@id/text_user_name"
+                android:layout_marginTop="3dp"
+                android:numStars="5"
+                tools:rating="4" />
+
+            <TextView
+                android:id="@+id/text_rating_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4.0"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:layout_toEndOf="@id/rating_user"
+                android:layout_alignTop="@id/rating_user"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/text_rating_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="(1K+ Reviews)"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/text_rating_average"
+                android:layout_alignTop="@id/rating_user"
+                android:fontFamily="@font/gordita_regular"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/image_user"
+                android:background="@color/colorGray" />
+
+            <TextView
+                android:id="@+id/text_invoice_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="15sp"
+                android:text="@string/add_a_little_thank_you"
+                android:textColor="@color/lightBlack" />
+
+            <TextView
+                android:id="@+id/tv_dollar_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TipItemStyle"
+                android:layout_below="@id/text_invoice_detail"
+                android:text="$10" />
+
+            <TextView
+                android:id="@+id/tv_dollar_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TipItemStyle"
+                android:layout_alignTop="@id/tv_dollar_10"
+                android:layout_toEndOf="@id/tv_dollar_10"
+                android:layout_marginStart="10dp"
+                android:text="$20" />
+
+            <TextView
+                android:id="@+id/tv_dollar_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TipItemStyle"
+                android:layout_alignTop="@id/tv_dollar_10"
+                android:layout_toEndOf="@id/tv_dollar_20"
+                android:layout_marginStart="10dp"
+                android:text="$30" />
+
+            <EditText
+                android:id="@+id/et_custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TipItemStyle.EditText"
+                android:hint="@string/custom_tip"
+                android:longClickable="false"
+                android:inputType="number"
+                android:maxLength="3"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/tv_dollar_30"
+                android:layout_alignTop="@id/tv_dollar_10"/>
+
+            <Button
+                android:enabled="false"
+                android:id="@+id/button_pay"
+                style="@style/AppTheme.SubmitButton"
+                android:layout_below="@id/tv_dollar_10"
+                android:layout_marginTop="20dp"
+                android:text="@string/pay_now"
+                android:layout_marginBottom="7dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

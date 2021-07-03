@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/main_background_gradient" />
+
+        <include android:id="@+id/my_toolbar"
+            layout="@layout/my_toolbar" />
+
+        <TextView
+            android:id="@+id/text_history_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:fontFamily="@font/gordita_regular"
+            android:layout_below="@id/my_toolbar"
+            android:text="@string/completed"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_history_cancelled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/gordita_regular"
+            android:layout_alignTop="@id/text_history_completed"
+            android:layout_toEndOf="@id/text_history_completed"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_below="@id/my_toolbar"
+            android:text="@string/cancelled"
+            android:textSize="12sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_order_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_below="@id/text_history_completed"/>
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/text_no_results"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gordita_regular"
+            android:layout_centerInParent="true"
+            android:textSize="14sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/lightBlack"
+            android:text="@string/no_results_found" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/main_background_gradient">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+        </LinearLayout>
+
+        <include android:id="@+id/my_toolbar"
+            layout="@layout/my_toolbar" />
+
+        <include android:id="@+id/view_query_detail"
+            layout="@layout/item_query_listing"
+            android:layout_below="@id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/linear_reply_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_query_detail"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reply"
+                android:textSize="16sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/gordita_medium" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/text_query_reply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textSize="16sp"
+                    tools:text="reply"
+                    android:textColor="@color/lightBlack"
+                    android:fontFamily="@font/gordita_regular" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

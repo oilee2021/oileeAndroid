@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/main_background_gradient">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+            <View
+                android:visibility="gone"
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+        </LinearLayout>
+
+        <include android:id="@+id/my_toolbar"
+            layout="@layout/my_toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_queries"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_below="@id/my_toolbar"
+            android:layout_above="@id/button_query"/>
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/text_no_results"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gordita_regular"
+            android:layout_centerInParent="true"
+            android:textSize="14sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/lightBlack"
+            android:text="@string/no_results_found" />
+
+        <Button
+            android:id="@+id/button_query"
+            style="@style/AppTheme.SubmitButton"
+            android:text="@string/report_an_issue"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    signingConfigs {
+        releaseConfig {
+            storeFile file('OileeKeystore')
+            storePassword 'oilee_android'
+            keyAlias = 'oilee_android'
+            keyPassword 'oilee_android'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.oileemobile"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 2
+        versionName "1.0.1"
+        vectorDrawables.useSupportLibrary = true
+        resConfigs "en"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+            debuggable = false
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // retrofit-REST client library for JAVA and Android
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
+
+    //Material design
+    implementation 'com.google.android.material:material:1.4.0-alpha02'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Image cropping
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    //Flexbox
+    implementation 'com.google.android:flexbox:2.0.1'
+
+    //Firebase Analytics
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
+    //Firebase Crashlytics for crash reporting
+    implementation 'com.google.firebase:firebase-crashlytics:17.4.1'
+    //Firebase Cloud Messaging
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+    //Firbase Authentication for phone verification
+    implementation 'com.google.firebase:firebase-auth:20.0.3'
+
+    //Picasso (Image loading)
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Stripe (Payment Gateway)
+    implementation 'com.stripe:stripe-android:14.5.0'
+
+    //Play Core for in-app updates
+    implementation 'com.google.android.play:core:1.10.0'
+
+    //Browser extension for Firebase Auth
+    implementation 'androidx.browser:browser:1.3.0'
+
+    //Custom calendar
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+
+    //Country Code Picker (Temporary)
+    implementation 'com.hbb20:ccp:2.4.5'
+
+    implementation 'com.google.android.libraries.places:places:2.3.0'
+}
+apply plugin: 'com.google.gms.google-services'

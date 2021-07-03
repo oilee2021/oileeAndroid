@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8f8fc">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/main_background_gradient" />
+
+        <include android:id="@+id/my_toolbar"
+            layout="@layout/my_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/my_toolbar"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/main_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/progress_steps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gordita_medium"
+                            android:textSize="12sp"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@android:color/black"
+                            android:text="@string/steps"/>
+
+                        <ImageView
+                            android:id="@+id/vehicle_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/app_logo"
+                            app:tint="@color/colorPrimary"
+                            android:layout_alignParentEnd="true" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/vehicle_icon"
+                            android:layout_marginTop="7dp"
+                            android:weightSum="1">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="4dp"
+                                android:layout_weight="0.7"
+                                android:background="#29c44d"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="4dp"
+                                android:layout_weight="0.3"
+                                android:background="#f4f0fe"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_packages"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_oil_package"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_special_request"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/special_request_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gordita_regular"
+                            android:textSize="14sp"
+                            android:textColor="#101629"
+                            android:text="@string/special_request" />
+
+                        <TextView
+                            android:id="@+id/special_request_subtitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gordita_regular"
+                            android:textSize="12sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_toStartOf="@id/special_request_tick"
+                            android:layout_below="@id/special_request_title"
+                            android:textColor="@color/lightBlack"
+                            android:text="@string/special_request_subtitle" />
+
+                        <ImageView
+                            android:id="@+id/special_request_tick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_untick"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignBottom="@id/special_request_title" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_technician_decide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/technician_decide_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gordita_regular"
+                            android:textSize="14sp"
+                            android:textColor="#101629"
+                            android:text="@string/let_technician_decide" />
+
+                        <TextView
+                            android:id="@+id/technician_decide_subtitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gordita_regular"
+                            android:textSize="12sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_toStartOf="@id/technician_decide_tick"
+                            android:layout_below="@id/technician_decide_title"
+                            android:textColor="@color/lightBlack"
+                            android:text="@string/technician_decide_subtitle" />
+
+                        <ImageView
+                            android:id="@+id/technician_decide_tick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_untick"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignBottom="@id/technician_decide_title" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/oil_pack_submit"
+                    style="@style/AppTheme.SubmitButton"
+                    android:text="@string/next"
+                    android:enabled="false"
+                    android:layout_margin="20dp" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

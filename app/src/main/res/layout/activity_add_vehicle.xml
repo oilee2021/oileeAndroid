@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackground">
+
+        <include android:id="@+id/my_toolbar"
+            layout="@layout/my_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/my_toolbar"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="10dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/image_vehicle"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_camera" />
+
+                        <TextView
+                            android:id="@+id/text_upload_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/upload_photo"
+                            android:layout_marginStart="20dp"
+                            android:textSize="14sp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:background="@drawable/background_rect_light_red"
+                            android:fontFamily="@font/gordita_regular"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/text_remove_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/remove"
+                            android:layout_marginStart="10dp"
+                            android:textSize="14sp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:background="@drawable/submit_button_background_lightgrey"
+                            android:textColor="@color/colorBlack"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/add_vehicle_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/year_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/year_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gordita_medium"
+                                android:textSize="13sp"
+                                android:maxLength="4"
+                                android:inputType="number"
+                                android:hint="@string/year"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/make_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/make_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gordita_medium"
+                                android:textSize="13sp"
+                                android:inputType="text|textCapWords"
+                                android:hint="@string/make"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/model_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/model_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gordita_medium"
+                                android:textSize="13sp"
+                                android:inputType="text|textCapWords"
+                                android:hint="@string/model"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sub_model_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sub_model_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gordita_medium"
+                                android:textSize="13sp"
+                                android:inputType="text|textCapWords"
+                                android:hint="@string/sub_model"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/color_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/color_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gordita_medium"
+                                android:textSize="13sp"
+                                android:inputType="text|textCapWords"
+                                android:hint="@string/color"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/current_mileage_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/current_mileage_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gordita_medium"
+                                android:textSize="13sp"
+                                android:inputType="number"
+                                android:hint="@string/current_mileage"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/license_plate_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/license_plate_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gordita_medium"
+                                android:textSize="13sp"
+                                android:inputType="text|textCapCharacters"
+                                android:hint="@string/licence_plate"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_default_vehicle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:id="@+id/image_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_untick"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/set_as_default"
+                                android:textSize="13sp"
+                                android:layout_marginStart="10dp"
+                                android:textColor="@android:color/black"
+                                android:fontFamily="@font/gordita_regular"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/add_vehicle_submit"
+                    style="@style/AppTheme.SubmitButton"
+                    android:text="@string/add_vehicle"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

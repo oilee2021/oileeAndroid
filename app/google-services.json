@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "188745355535",
+    "firebase_url": "https://oileeapp-1567346695071.firebaseio.com",
+    "project_id": "oileeapp-1567346695071",
+    "storage_bucket": "oileeapp-1567346695071.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188745355535:android:10df716fb22935095a6e7a",
+        "android_client_info": {
+          "package_name": "com.oileemobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188745355535-cgkub38e2v14f2ntgpq98vqpblojppga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZLILj-GjALMwg4cC9jsAkKnTYRZlFy08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188745355535-cgkub38e2v14f2ntgpq98vqpblojppga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+

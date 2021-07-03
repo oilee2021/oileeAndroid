@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_user"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                tools:src="@drawable/profile_pic_demo" />
+
+            <TextView
+                android:id="@+id/text_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Shubham Mathur"
+                android:fontFamily="@font/gordita_bold"
+                android:textColor="@color/lightBlack"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/image_user"/>
+
+            <RatingBar
+                android:id="@+id/rating_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_below="@id/text_user_name"
+                android:layout_alignStart="@id/text_user_name"
+                android:layout_marginTop="3dp"
+                android:numStars="5"
+                tools:rating="4" />
+
+            <TextView
+                android:id="@+id/text_technician_vehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Toyota"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:layout_alignStart="@id/rating_user"
+                android:layout_below="@id/rating_user"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/text_rating_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4.0"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:layout_toEndOf="@id/rating_user"
+                android:layout_alignTop="@id/rating_user"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/text_rating_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="(1K+ Reviews)"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/text_rating_average"
+                android:layout_alignTop="@id/rating_user"
+                android:fontFamily="@font/gordita_regular"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/text_user_name"
+                tools:text="$34"
+                android:textSize="20sp"
+                android:fontFamily="@font/gordita_medium"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/text_order_id_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order ID:"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_below="@id/image_user"
+                android:layout_marginTop="30dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="#DSDADSDAD"
+                android:layout_alignStart="@id/text_order_id_title"
+                android:textColor="@color/lightBlack"
+                android:fontFamily="@font/gordita_medium"
+                android:layout_below="@id/text_order_id_title"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_order_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Date:"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_alignTop="@id/text_order_id_title"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_order_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="21 June, 2019"
+                android:layout_alignStart="@id/text_order_date_title"
+                android:textColor="@color/lightBlack"
+                android:fontFamily="@font/gordita_medium"
+                android:layout_below="@id/text_order_date_title"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_paid_via_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paid Via:"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_alignTop="@id/text_order_id_title"
+                android:layout_alignStart="@id/text_paid_via"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_paid_via"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Credit Card"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/lightBlack"
+                android:fontFamily="@font/gordita_medium"
+                android:layout_below="@id/text_paid_via_title"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_order_services_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Services:"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_below="@id/text_order_id_title"
+                android:layout_marginTop="30dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_order_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Oil Change"
+                android:textColor="@color/lightBlack"
+                android:fontFamily="@font/gordita_medium"
+                android:layout_below="@id/text_order_services_title"
+                android:layout_alignStart="@id/text_order_services_title"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_order_service_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service Date:"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_below="@id/text_order_services_title"
+                android:layout_marginTop="30dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_order_service_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="22 June, 2019 | 12:00 PM"
+                android:textColor="@color/lightBlack"
+                android:fontFamily="@font/gordita_medium"
+                android:layout_below="@id/text_order_service_date_title"
+                android:layout_alignStart="@id/text_order_services_title"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

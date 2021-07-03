@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_user"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                tools:src="@drawable/profile_pic_demo" />
+
+            <TextView
+                android:id="@+id/text_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Shubham Mathur"
+                android:fontFamily="@font/gordita_bold"
+                android:textColor="@color/lightBlack"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/image_user"/>
+
+            <RatingBar
+                android:id="@+id/rating_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_below="@id/text_user_name"
+                android:layout_alignStart="@id/text_user_name"
+                android:layout_marginTop="3dp"
+                android:numStars="5"
+                tools:rating="4" />
+
+            <TextView
+                android:id="@+id/text_rating_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4.0"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:layout_toEndOf="@id/rating_user"
+                android:layout_alignTop="@id/rating_user"
+                android:fontFamily="@font/gordita_regular"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/text_rating_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="(1K+ Reviews)"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/text_rating_average"
+                android:layout_alignTop="@id/rating_user"
+                android:fontFamily="@font/gordita_regular"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_invoice_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_user"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                tools:text="Technician has requested you to pay."
+                android:textColor="@color/lightBlack" />
+
+            <Button
+                android:id="@+id/button_pay"
+                style="@style/AppTheme.SubmitButton"
+                android:layout_below="@id/text_invoice_detail"
+                android:layout_marginTop="20dp"
+                android:text="@string/pay"
+                android:layout_marginBottom="7dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

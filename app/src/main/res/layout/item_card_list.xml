@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/text_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_toStartOf="@id/image_tick"
+                android:fontFamily="@font/gordita_regular"
+                android:textColor="@color/lightBlack"
+                tools:text="XXXX-XXXX-XXXX-XXXX-1234"/>
+
+            <ImageView
+                android:id="@+id/image_tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_untick"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:id="@+id/text_card_expirationn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gordita_regular"
+                tools:text="12/21"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/text_card_number"
+                android:padding="@dimen/margin_1x" />
+
+            <TextView
+                android:id="@+id/text_card_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gordita_regular"
+                tools:text="Visa"
+                android:padding="@dimen/margin_1x"
+                android:layout_marginEnd="10dp"
+                android:layout_toLeftOf="@+id/image_delete"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/text_card_number"
+               />
+
+
+            <ImageView
+                android:id="@+id/image_delete"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_card_number"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="7dp"
+                android:src="@drawable/ic_delete_oilee" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

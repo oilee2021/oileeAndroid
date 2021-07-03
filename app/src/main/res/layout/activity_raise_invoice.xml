@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/main_background_gradient" />
+
+        <include android:id="@+id/my_toolbar"
+            layout="@layout/my_toolbar_technician" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gordita_medium"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:text="@string/hey_nice_work"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/text_invoice_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="#717799"
+                            android:padding="15dp"
+                            android:gravity="center_horizontal"
+                            tools:text="@string/raise_invoice_info"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sub_total_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sub_total_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:maxLines="1"
+                                android:enabled="false"
+                                android:textSize="13sp"
+                                android:hint="@string/service_sub_total"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/text_coupon_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gordita_medium"
+                    android:text="@string/coupons"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#232a44"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_coupons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_coupon_llist"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/text_item_total_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/item_total"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentStart="true"
+                            android:layout_toStartOf="@id/text_item_total"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/text_item_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="$280"
+                            android:layout_alignTop="@id/text_item_total_title"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentEnd="true"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/text_booking_charge_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booking_charge"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/text_item_total_title"
+                            android:layout_marginTop="10dp"
+                            android:layout_toStartOf="@id/text_booking_charge"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/text_booking_charge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="$20"
+                            android:layout_alignTop="@id/text_booking_charge_title"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentEnd="true"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/text_discount_applied_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/discount_applied"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/text_booking_charge_title"
+                            android:layout_marginTop="10dp"
+                            android:layout_toStartOf="@id/text_discount_applied"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/text_discount_applied"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="$10"
+                            android:layout_alignTop="@id/text_discount_applied_title"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentEnd="true"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/text_total_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/gordita_medium"
+                            android:layout_below="@id/text_discount_applied_title"
+                            android:layout_marginTop="15dp"
+                            android:layout_toStartOf="@id/text_total"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/text_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="$250"
+                            android:fontFamily="@font/gordita_medium"
+                            android:layout_alignTop="@id/text_total_title"
+                            android:textColor="@color/lightBlack"
+                            android:layout_alignParentEnd="true"
+                            android:textSize="14sp"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/button_submit"
+                    style="@style/AppTheme.SubmitButton"
+                    android:text="@string/submit"
+                    android:layout_margin="20dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

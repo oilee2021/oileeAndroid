@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/my_toolbar"
+            layout="@layout/my_toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:background="@color/activityBackground">
+
+            <Button
+                android:id="@+id/report_submit"
+                style="@style/AppTheme.SubmitButton"
+                android:text="@string/submit"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/report_submit"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apologies"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/gordita_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_issue_text"
+                    android:textColor="@color/lightBlack"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/gordita_regular"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tell_us_more"
+                    android:textColor="@color/lightBlack"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/gordita_regular"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/edit_report_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="5"
+                    android:maxLines="8"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="12sp"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:fontFamily="@font/gordita_regular"
+                    android:gravity="start"
+                    android:hint="@string/explain_in_brief" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_photos"
+                    android:textColor="@color/lightBlack"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/gordita_regular"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_attach1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_add"
+                        android:background="@color/lightGrey"
+                        android:scaleType="centerInside"/>
+
+                    <ImageView
+                        android:id="@+id/image_attach2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_add"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/lightGrey"
+                        android:scaleType="centerInside"/>
+
+                    <ImageView
+                        android:id="@+id/image_attach3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_add"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/lightGrey"
+                        android:scaleType="centerInside"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

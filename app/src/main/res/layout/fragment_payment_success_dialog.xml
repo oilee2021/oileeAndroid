@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_payment_success_header" />
+
+        <TextView
+            android:id="@+id/text_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$144.00"
+            android:fontFamily="@font/gordita_bold"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_was_successful"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/gordita_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/allow_days_processing"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:textColor="@color/lightBlack"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="40dp">
+
+            <ImageView
+                android:id="@+id/image_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_calendar_gray" />
+
+            <TextView
+                android:id="@+id/text_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/date"
+                android:layout_marginStart="7dp"
+                android:textColor="@color/lightBlack"
+                android:layout_toEndOf="@id/image_calendar" />
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="January 01, 2020"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/image_calendar"
+                android:textColor="@color/colorBlack"/>
+
+            <ImageView
+                android:id="@+id/image_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/text_time_title"
+                android:layout_alignStart="@id/text_time"
+                android:src="@drawable/ic_clock" />
+
+            <TextView
+                android:id="@+id/text_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/time"
+                android:textColor="@color/lightBlack"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@id/image_clock"/>
+
+            <TextView
+                android:id="@+id/text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11:00 PM"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/text_time_title"
+                android:textColor="@color/colorBlack"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_okay"
+            style="@style/AppTheme.SubmitButton"
+            android:layout_marginTop="30dp"
+            android:text="@string/okay"/>
+    </LinearLayout>
+</layout>
